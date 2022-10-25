@@ -14,6 +14,8 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "framer-motion": "^6.2.9",
+    "package": "^1.0.1",
+    "prettier": "^2.7.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^3.0.0",
