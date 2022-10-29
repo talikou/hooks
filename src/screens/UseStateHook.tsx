@@ -2,16 +2,18 @@
 import { useState } from "react";
 
 // UI
-import { Box, Text, Button, Flex } from "@chakra-ui/react";
+import { Text, Button, Flex, Center, HStack } from "@chakra-ui/react";
 
 // components
 import Block from "../components/Block";
 
 export default function UseStateHook() {
+  let date = new Date().toDateString();
+
   const [counter, setCounter] = useState(0);
   const [state, setState] = useState({
-    title: "Счетчик",
-    date: Date.now(),
+    title: "Counter",
+    date: date,
   });
 
   const increment = () => {
@@ -26,29 +28,37 @@ export default function UseStateHook() {
     setState((prev) => {
       return {
         ...prev,
-        title: "Новое значение",
+        title: "New value",
       };
     });
   };
 
   return (
     <>
-      <Flex as={Text} fontSize="2rem" justifyContent="center" mb="1rem">
+      <Center as={Text} fontSize="2rem" mb="1rem">
         UseState Hook
-      </Flex>
-      <Flex justifyContent="space-evenly">
+      </Center>
+      <Flex justifyContent="space-between" mb="3rem">
         <Block>
           <Text fontSize="2rem">Counter: {counter}</Text>
-          <Button onClick={increment} mr="1rem" bgColor="blue.400">
-            +
-          </Button>
-          <Button onClick={decrement} bgColor="blue.400">
-            -
-          </Button>
+          <HStack>
+            <Button onClick={increment} bgColor="blue.600">
+              +
+            </Button>
+            <Button onClick={decrement} bgColor="blue.600">
+              -
+            </Button>
+          </HStack>
         </Block>
         <Block>
-          <pre>{JSON.stringify(state, null, 2)}</pre>
-          <Button onClick={updateTitle}>Изменить название</Button>
+          <Text fontSize="1.5rem">
+            Title: {state.title}
+            <br />
+            Date: {state.date}
+          </Text>
+          <Button bgColor="purple.600" onClick={updateTitle}>
+            Change name
+          </Button>
         </Block>
       </Flex>
     </>
