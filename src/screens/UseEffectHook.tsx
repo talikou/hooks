@@ -37,18 +37,16 @@ export default function useEffectHook() {
 
   function CollapseBox(type: String) {
     return (
-      <>
-        <Box
-          p="1rem"
-          color="white"
-          mt="1rem"
-          bg="teal.500"
-          rounded="md"
-          shadow="md"
-        >
-          {JSON.stringify(data, null, 2)}
-        </Box>
-      </>
+      <Box
+        p="1rem"
+        color="white"
+        mt="1rem"
+        bg="teal.500"
+        rounded="md"
+        shadow="md"
+      >
+        {JSON.stringify(data, null, 2)}
+      </Box>
     );
   }
 
@@ -65,7 +63,7 @@ export default function useEffectHook() {
       <Center as={Text} fontSize="2rem" mb="1rem">
         UseEffect Hook
       </Center>
-      <Box>
+      <Box mb="3rem">
         <Flex wrap="wrap" justifyContent="space-between">
           <Block>
             <Text fontSize="2rem">Resource: {type}</Text>
