@@ -59,11 +59,11 @@ export default function useEffectHook() {
   }, []);
 
   return (
-    <Box>
-      <Center as={Text} fontSize="2rem" mb="1rem">
+    <Box mb="3rem">
+      <Center fontSize="2rem" mb="1rem">
         UseEffect Hook
       </Center>
-      <Box mb="3rem">
+      <Box>
         <Flex wrap="wrap" justifyContent="space-between">
           <Block>
             <Text fontSize="2rem">Resource: {type}</Text>

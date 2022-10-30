@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // UI
-import { Text, Button, Flex, Center, HStack } from "@chakra-ui/react";
+import { Text, Button, Flex, Center, HStack, Box } from "@chakra-ui/react";
 
 // components
 import Block from "../components/Block";
@@ -34,11 +34,11 @@ export default function UseStateHook() {
   };
 
   return (
-    <>
-      <Center as={Text} fontSize="2rem" mb="1rem">
+    <Box mb="3rem">
+      <Center fontSize="2rem" mb="1rem">
         UseState Hook
       </Center>
-      <Flex justifyContent="space-between" mb="3rem">
+      <Flex justifyContent="space-between">
         <Block>
           <Text fontSize="2rem">Counter: {counter}</Text>
           <HStack>
@@ -61,6 +61,6 @@ export default function UseStateHook() {
           </Button>
         </Block>
       </Flex>
-    </>
+    </Box>
   );
 }

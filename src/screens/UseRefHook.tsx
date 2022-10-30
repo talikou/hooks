@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Text, Input, Button, Flex, Center } from "@chakra-ui/react";
+import { Text, Input, Button, Flex, Center, Box } from "@chakra-ui/react";
 import Block from "../components/Block";
 
 export default function UseRefHook() {
@@ -19,8 +19,8 @@ export default function UseRefHook() {
   const focus = () => inputRef.current?.focus();
 
   return (
-    <>
-      <Center as={Text} fontSize="2rem" justifyContent="center">
+    <Box mb="3rem">
+      <Center fontSize="2rem" mb="1rem">
         UseRef Hook
       </Center>
 
@@ -44,6 +44,6 @@ export default function UseRefHook() {
           </Text>
         </Block>
       </Flex>
-    </>
+    </Box>
   );
 }
