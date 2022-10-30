@@ -32,7 +32,7 @@ export default function UseRefHook() {
             onChange={(e) => setValue(e.target.value)}
             value={value}
           />
-          <Button mt=".5rem" onClick={focus}>
+          <Button mt=".5rem" bgColor="orange.600" onClick={focus}>
             Focus
           </Button>
         </Block>

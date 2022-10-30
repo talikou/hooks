@@ -1,9 +1,8 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Text, Button, Box, HStack, Center } from "@chakra-ui/react";
 import Block from "../components/Block";
 
 function complexCompute(num: number) {
-  console.log("Complex compute");
   let i = 0;
   while (i < 1000000000) i++;
   return num * 2;
@@ -24,10 +23,6 @@ export default function UseMemoHook() {
     return complexCompute(number);
   }, [number]);
 
-  useEffect(() => {
-    console.log("Styles changed");
-  }, [styled]);
-
   return (
     <Box mb="3rem">
       <Center fontSize="2rem" mb="1rem">
@@ -35,24 +30,24 @@ export default function UseMemoHook() {
       </Center>
       <Center>
         <Block>
-          <Text fontSize="2rem" style={styled}>
+          <Text fontSize="1.5rem" style={styled}>
             Compute prop: {computed}
           </Text>
           <HStack>
             <Button
-              bgColor="green.600"
+              bgColor="cyan.600"
               onClick={() => setNumber((prev) => prev + 1)}
             >
               Add
             </Button>
             <Button
-              bgColor="red.600"
+              bgColor="purple.600"
               onClick={() => setNumber((prev) => prev - 1)}
             >
               Remove
             </Button>
             <Button
-              bgColor="blue.600"
+              bgColor="pink.600"
               onClick={() => setColored((prev) => !prev)}
             >
               Change

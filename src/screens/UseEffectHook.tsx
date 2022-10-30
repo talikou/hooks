@@ -66,7 +66,7 @@ export default function useEffectHook() {
       <Box>
         <Flex wrap="wrap" justifyContent="space-between">
           <Block>
-            <Text fontSize="2rem">Resource: {type}</Text>
+            <Text fontSize="1.5rem">Resource: {type}</Text>
             <HStack>
               <Button
                 bgColor="green.600"
@@ -83,10 +83,10 @@ export default function useEffectHook() {
             </HStack>
           </Block>
           <Block>
-            <Text fontSize="2rem">Mouse Location:</Text>
+            <Text fontSize="1.5rem">Mouse Location:</Text>
             <HStack alignItems="center">
               <Box
-                bgColor="blue.600"
+                bgColor="yellow.600"
                 p={2}
                 borderRadius="0.4rem"
                 fontWeight="600"
@@ -94,7 +94,7 @@ export default function useEffectHook() {
                 X: {pos.x}
               </Box>
               <Box
-                bgColor="blue.600"
+                bgColor="yellow.600"
                 p={2}
                 borderRadius="0.4rem"
                 fontWeight="600"

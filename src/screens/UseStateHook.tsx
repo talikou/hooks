@@ -8,13 +8,8 @@ import { Text, Button, Flex, Center, HStack, Box } from "@chakra-ui/react";
 import Block from "../components/Block";
 
 export default function UseStateHook() {
-  let date = new Date().toDateString();
-
   const [counter, setCounter] = useState(0);
-  const [state, setState] = useState({
-    title: "Counter",
-    date: date,
-  });
+  const [state, setState] = useState("Counter");
 
   const increment = () => {
     setCounter((prevState) => prevState + 1);
@@ -24,14 +19,7 @@ export default function UseStateHook() {
     setCounter((prevState) => prevState - 1);
   };
 
-  const updateTitle = () => {
-    setState((prev) => {
-      return {
-        ...prev,
-        title: "New value",
-      };
-    });
-  };
+  const updateTitle = () => setState((prev) => (prev = "New value"));
 
   return (
     <Box mb="3rem">
@@ -40,7 +28,7 @@ export default function UseStateHook() {
       </Center>
       <Flex justifyContent="space-between">
         <Block>
-          <Text fontSize="2rem">Counter: {counter}</Text>
+          <Text fontSize="1.5rem">Counter: {counter}</Text>
           <HStack>
             <Button onClick={increment} bgColor="blue.600">
               +
@@ -51,11 +39,7 @@ export default function UseStateHook() {
           </HStack>
         </Block>
         <Block>
-          <Text fontSize="1.5rem">
-            Title: {state.title}
-            <br />
-            Date: {state.date}
-          </Text>
+          <Text fontSize="1.5rem">Title: {state}</Text>
           <Button bgColor="purple.600" onClick={updateTitle}>
             Change name
           </Button>
